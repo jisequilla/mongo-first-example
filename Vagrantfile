@@ -61,6 +61,15 @@ SCRIPT
 		sudo docker pull mongo
 		
 		
+		sudo docker run -p 27017:27017 --name my-first-mongo -d mongo
+		
+		sudo docker run -p 37010:27017 --name my-first-mongo -d mongo
+		
+		sudo docker run -p 47010:27017 --name my-first-mongo -d mongo
+		
+		sudo docker run -p 57010:27017 --name my-first-mongo -d mongo
+		
+		
 		
 SCRIPT
 
