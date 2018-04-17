@@ -60,14 +60,18 @@ SCRIPT
 		
 		sudo docker pull mongo
 		
+		mkdir -p ~/second/data
+		
+		mkdir -p ~/fourth/data
+		
 		
 		sudo docker run -p 27017:27017 --name my-first-mongo -d mongo
 		
-		sudo docker run -p 37010:27017 --name my-first-mongo -d mongo
+		sudo docker run -p 37010:27017 --name -v /home/vagrant/second/data:/data/db my-second-mongo -d mongo
 		
-		sudo docker run -p 47010:27017 --name my-first-mongo -d mongo
+		sudo docker run -p 47010:27017 --name my-third-mongo -d mongo
 		
-		sudo docker run -p 57010:27017 --name my-first-mongo -d mongo
+		sudo docker run -p 57010:27017 --name -v /home/vagrant/fourth/data:/data/db my-fourth-mongo -d mongo
 		
 		
 		
